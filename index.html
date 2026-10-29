@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natácia Duarte | Portfólio de IA</title>
+<meta name="description" content="Portfólio de Natácia Duarte: automações, agentes e ferramentas com IA.">
+<style>
+  :root {
+    --navy: #1a2744;
+    --terracota: #c96f4a;
+    --fundo: #f7f5f2;
+    --texto: #2b2f38;
+    --suave: #5d6472;
+    --borda: #e2ddd6;
+    --branco: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: var(--terracota); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  header { background: var(--navy); color: var(--branco); padding: 64px 0 56px; }
+  header h1 { font-size: 2.4rem; line-height: 1.2; letter-spacing: -0.5px; }
+  header .cargo { color: var(--terracota); font-weight: 600; margin-top: 8px; font-size: 1.1rem; }
+  header p.intro { margin-top: 20px; max-width: 640px; color: #d9dde6; }
+  .contatos { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .contatos a {
+    color: var(--branco); text-decoration: none; border: 1.5px solid #4a5677;
+    padding: 8px 16px; border-radius: 6px; font-size: 0.95rem;
+  }
+  .contatos a:hover { border-color: var(--terracota); color: var(--terracota); }
+
+  section { padding: 56px 0 8px; }
+  h2 { color: var(--navy); font-size: 1.5rem; margin-bottom: 8px; }
+  .lead { color: var(--suave); margin-bottom: 28px; }
+
+  .projeto {
+    background: var(--branco); border: 1px solid var(--borda);
+    border-left: 5px solid var(--terracota); border-radius: 8px;
+    padding: 28px; margin-bottom: 24px;
+  }
+  .projeto h3 { color: var(--navy); font-size: 1.25rem; margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tags span {
+    background: #eef0f5; color: var(--navy); font-size: 0.8rem;
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .projeto dl { display: grid; gap: 12px; }
+  .projeto dt { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+  .projeto dd { margin-top: 2px; }
+  .projeto img {
+    width: 100%; border: 1px solid var(--borda); border-radius: 6px; margin-top: 16px;
+  }
+  .links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a {
+    text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    padding: 8px 14px; border-radius: 6px; border: 1.5px solid var(--terracota);
+  }
+  .links a.principal { background: var(--terracota); color: var(--branco); }
+  .nota { font-size: 0.85rem; color: var(--suave); margin-top: 8px; }
+
+  .lista { list-style: none; display: grid; gap: 10px; }
+  .lista li { padding-left: 18px; position: relative; }
+  .lista li::before {
+    content: ""; position: absolute; left: 0; top: 0.65em;
+    width: 7px; height: 7px; background: var(--terracota); border-radius: 50%;
+  }
+
+  footer { margin-top: 56px; padding: 32px 0; border-top: 1px solid var(--borda); color: var(--suave); font-size: 0.9rem; }
+
+  @media (max-width: 600px) {
+    header { padding: 44px 0 40px; }
+    header h1 { font-size: 1.9rem; }
+    .projeto { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Natácia Duarte</h1>
+    <div class="cargo">Estudante de Inteligência Artificial e Machine Learning</div>
+    <p class="intro">Construo automações e agentes com apoio de IA para resolver problemas reais, começando pelos meus. Uso a IA para escrever código, mas o problema, as regras, os testes e a validação dos resultados são trabalho meu.</p>
+    <div class="contatos">
+      <a href="https://github.com/nataciaduarte">GitHub</a>
+      <a href="https://www.linkedin.com/in/nataciaduarte7a4860381">LinkedIn</a>
+      <a href="mailto:nataciaduarte92@gmail.com">nataciaduarte92@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Projetos</h2>
+    <p class="lead">Três projetos publicados, cada um com o código aberto no GitHub.</p>
+
+    <article class="projeto">
+      <h3>Alerta diário de vagas com n8n e IA</h3>
+      <div class="tags"><span>n8n</span><span>API da Groq</span><span>Telegram</span><span>JavaScript</span></div>
+      <dl>
+        <div>
+          <dt>Problema</dt>
+          <dd>Mesmo com as vagas reunidas num só lugar, eu ainda precisava ler uma por uma para saber quais combinavam com o meu perfil.</dd>
+        </div>
+        <div>
+          <dt>Solução</dt>
+          <dd>Um fluxo no n8n que roda todo dia às 15h, lê as vagas coletadas nas últimas 24 horas e manda um resumo pelo Telegram. Uma regra fixa no código descarta vagas de ensino médio e de curso técnico. Depois, a IA classifica cada vaga como alta, média ou baixa compatibilidade.</dd>
+        </div>
+        <div>
+          <dt>O que aprendi validando a IA</dt>
+          <dd>Nos testes, a IA cometeu erros, como classificar uma vaga de curso técnico com um motivo inventado. Quando ajustar as instruções não resolveu, a regra passou para o código, porque uma regra fixa não erra o que já está decidido.</dd>
+        </div>
+      </dl>
+      <img src="https://raw.githubusercontent.com/nataciaduarte/alerta-vagas-n8n/main/img/fluxo.png" alt="Fluxo da automação no n8n" loading="lazy">
+      <div class="links">
+        <a class="principal" href="https://github.com/nataciaduarte/alerta-vagas-n8n">Ver o projeto</a>
+      </div>
+    </article>
+
+    <article class="projeto">
+      <h3>Plataforma de busca de vagas de estágio</h3>
+      <div class="tags"><span>Python</span><span>SQLite</span><span>Streamlit</span><span>GitHub Actions</span></div>
+      <dl>
+        <div>
+          <dt>Problema</dt>
+          <dd>Procurar estágio exigia abrir vários sites todos os dias. Eu passava cerca de 6 horas por dia nisso.</dd>
+        </div>
+        <div>
+          <dt>Solução</dt>
+          <dd>Uma coleta automática que roda todo dia no GitHub Actions, busca vagas de estágio no Rio de Janeiro pela API da Adzuna, remove duplicadas e mostra tudo num site com filtros. Pela minha estimativa, o tempo de busca caiu para cerca de 3 horas por dia.</dd>
+        </div>
+        <div>
+          <dt>Destaque</dt>
+          <dd>A chave da API fica guardada nos segredos do GitHub e nunca aparece no código. Os dados coletados também alimentam o alerta diário com IA.</dd>
+        </div>
+      </dl>
+      <div class="links">
+        <a class="principal" href="https://buscador-vagas-natacia.streamlit.app">Abrir a plataforma</a>
+        <a href="https://github.com/nataciaduarte/buscador-vagas">Ver o código</a>
+      </div>
+      <p class="nota">A plataforma fica num servidor gratuito e pode levar alguns segundos para carregar na primeira visita.</p>
+    </article>
+
+    <article class="projeto">
+      <h3>Agente de tratamento de dados e dashboard de vendas</h3>
+      <div class="tags"><span>Python</span><span>pandas</span><span>HTML e JavaScript</span><span>GitHub Pages</span></div>
+      <dl>
+        <div>
+          <dt>Problema</dt>
+          <dd>Uma planilha de 100 vendas tinha datas impossíveis, datas no futuro e vendas canceladas misturadas aos dados válidos. Um gráfico feito em cima dela mostraria números errados.</dd>
+        </div>
+        <div>
+          <dt>Solução</dt>
+          <dd>Um agente em Python que aplica as regras de um schema, separa os problemas e gera um relatório de qualidade. Foram 24 datas impossíveis, 20 datas futuras e 5 vendas canceladas. O dashboard usa só os 51 registros válidos.</dd>
+        </div>
+      </dl>
+      <div class="links">
+        <a class="principal" href="https://nataciaduarte.github.io/agente-dashboard-vendas-porsche/dashboard/">Abrir o dashboard</a>
+        <a href="https://github.com/nataciaduarte/agente-dashboard-vendas-porsche">Ver o código</a>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Formação</h2>
+    <ul class="lista">
+      <li>Tecnólogo em Inteligência Artificial e Machine Learning, UNIASSELVI (EAD), de 07/2026 a 12/2028, em andamento</li>
+      <li>AI-900 (curso preparatório), Fundação Bradesco</li>
+      <li>Python, Santander Open Academy</li>
+      <li>AI Reports com Excel, GPT Agents e Claude Code, DIO</li>
+      <li>Criando Agentes de Tratamento de Dados, DIO</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Como eu trabalho</h2>
+    <ul class="lista">
+      <li>Começo pelo problema e só depois escolho a ferramenta.</li>
+      <li>Uso a IA para gerar código e confiro o resultado antes de confiar nele.</li>
+      <li>O que precisa ser sempre igual vira regra fixa, e a IA fica com o que exige interpretação.</li>
+      <li>Publico o que construo, com o código aberto e as chaves protegidas.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Natácia Duarte · Rio de Janeiro, RJ</div>
+</footer>
+
+</body>
+</html>
